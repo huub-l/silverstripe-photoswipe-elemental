@@ -1,17 +1,25 @@
 "use strict";
 
-var _photoswipeLightboxEsm = _interopRequireDefault(require("./photoswipe-lightbox.esm.js"));
+var _photoswipeLightboxEsm = _interopRequireDefault(require("https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js"));
+var _photoswipeEsm = _interopRequireDefault(require("https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != _typeof(e) && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
-var lightbox = new _photoswipeLightboxEsm["default"]({
-  gallery: '#my-gallery',
-  children: 'a',
-  pswpModule: function pswpModule() {
-    return Promise.resolve().then(function () {
-      return _interopRequireWildcard(require('./photoswipe.esm.js'));
-    });
-  }
+// Initialize PhotoSwipe for each gallery
+document.querySelectorAll('.photoswipegallery').forEach(function (galleryEl) {
+  var lightbox = new _photoswipeLightboxEsm["default"]({
+    gallery: galleryEl,
+    children: 'a',
+    // Each <a> inside the gallery is an item
+    pswpModule: _photoswipeEsm["default"],
+    // Optional: Add UI options
+    padding: {
+      top: 20,
+      bottom: 20,
+      left: 20,
+      right: 20
+    },
+    bgOpacity: 0.9,
+    showHideAnimationType: 'fade'
+  });
+  lightbox.init();
 });
-lightbox.init();
 //# sourceMappingURL=../../dist/javascript/maps/gallery.js.map

@@ -1,14 +1,17 @@
-import PhotoSwipeLightbox from './photoswipe-lightbox.esm.js';
+import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js';
+import PhotoSwipe from 'https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js';
 
-const galleryElements = document.querySelectorAll('.photoswipegallery');
-
-galleryElements.forEach(el => {
+// Initialize PhotoSwipe for each gallery
+document.querySelectorAll('.photoswipegallery').forEach((galleryEl) => {
     const lightbox = new PhotoSwipeLightbox({
-        gallery: '#my-gallery',
-        children: 'a',
-        pswpModule: () => import('./photoswipe.esm.js')
+        gallery: galleryEl,
+        children: 'a', // Each <a> inside the gallery is an item
+        pswpModule: PhotoSwipe,
+        // Optional: Add UI options
+        padding: { top: 20, bottom: 20, left: 20, right: 20 },
+        bgOpacity: 0.9,
+        showHideAnimationType: 'fade',
     });
+
     lightbox.init();
 });
-
-
