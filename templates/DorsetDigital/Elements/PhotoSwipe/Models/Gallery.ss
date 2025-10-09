@@ -1,3 +1,4 @@
+<div class="container">
 <% if $Title && $ShowTitle %>
     <div class="gallerytitle_holder">
         <h2 class="gallerytitle">$Title</h2>
@@ -8,4 +9,4 @@
         <% include DorsetDigital\\Elements\\PhotoSwipe\\Models\\GalleryImage %>
     <% end_loop %>
 </div>
-
+</div>
