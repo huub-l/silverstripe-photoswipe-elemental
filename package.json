@@ -1,0 +1,41 @@
+{
+  "name": "silverstripe-photoswipe-elemental",
+  "version": "1.0.0",
+  "description": "Add a responsive image gallery to a page using the Photoswipe library in an Elemental Block.",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "build:prod": "NODE_ENV=production gulp",
+    "build:watch": "gulp watch",
+    "build:watch:prod": "NODE_ENV=production gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DorsetDigital/silverstripe-photoswipe-elemental.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DorsetDigital/silverstripe-photoswipe-elemental/issues"
+  },
+  "homepage": "https://github.com/DorsetDigital/silverstripe-photoswipe-elemental#readme",
+  "devDependencies": {
+    "photoswipe": "^5.4.4",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "autoprefixer": "^10.0.1",
+    "babel-preset-minify": "^0.5.1",
+    "bootstrap": "^5.3.3",
+    "eslint": "^7.13.0",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-mode": "^1.1.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "postcss": "^8.2.1",
+    "sass": "^1.79.3"
+  }
+}

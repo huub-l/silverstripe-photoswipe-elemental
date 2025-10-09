@@ -3,10 +3,9 @@
         <h2 class="gallerytitle">$Title</h2>
     </div>
 <% end_if %>
-<div class="row py-4 picture photoswipegallery" itemscope itemtype="http://schema.org/ImageGallery">
+<div class="row py-4 picture photoswipegallery">
     <% loop $SortedImages %>
         <% include DorsetDigital\\Elements\\PhotoSwipe\\Models\\GalleryImage %>
     <% end_loop %>
 </div>
 
-<% include DorsetDigital\\Elements\\PhotoSwipe\\Models\\PhotoSwipe %>

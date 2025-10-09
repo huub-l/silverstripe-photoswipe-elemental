@@ -15,10 +15,9 @@
     }
   ],
   "require": {
-    "silverstripe/cms": "^4.0",
-    "silverstripe/vendor-plugin": "^1.0",
+    "silverstripe/cms": "^4 | ^5",
     "bummzack/sortablefile": "^2.0",
-    "dnadesign/silverstripe-elemental": "^3 || ^4"
+    "dnadesign/silverstripe-elemental": "*"
   },
   "autoload": {
     "psr-4": {
