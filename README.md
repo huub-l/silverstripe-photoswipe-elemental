@@ -10,10 +10,9 @@ Includes gallery functionality along with a lazy-loader for the thumbnails to he
 [![Version](http://img.shields.io/packagist/v/dorsetdigital/silverstripe-photoswipe-elemental.svg?style=flat)](https://packagist.org/packages/dorsetdigital/silverstripe-photoswipe-elemental)
 
 # Requirements
-* Silverstripe 4.x
+* Silverstripe CMS 4 or 5
 * bummzack/sortablefile
-* dnadesign/silverstripe-elemental ^3 || ^4
-
+* dnadesign/silverstripe-elemental 
 
 
 # Installation
