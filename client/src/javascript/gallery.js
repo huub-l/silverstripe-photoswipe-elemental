@@ -1,5 +1,5 @@
-import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.js';
-import PhotoSwipe from 'https://unpkg.com/photoswipe@5/dist/photoswipe.esm.js';
+import PhotoSwipeLightbox from './photoswipe-lightbox.esm.js';
+import PhotoSwipe from './photoswipe.esm.js';
 
 // Initialize PhotoSwipe for each gallery
 document.querySelectorAll('.photoswipegallery').forEach((galleryEl) => {
