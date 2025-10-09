@@ -9,9 +9,9 @@ class GalleryController extends ElementController
 {
     public function init() {
         parent::init();
-        Requirements::javascript('dorsetdigital/silverstripe-photoswipe-elemental:client/dist/gallery.js', [
+        Requirements::javascript('dorsetdigital/silverstripe-photoswipe-elemental:client/dist/javascript/gallery.js', [
             'type' => 'module',
         ]);
-        Requirements::css('dorsetdigital/silverstripe-photoswipe-elemental:client/dist/photoswipe.css');
+        Requirements::css('dorsetdigital/silverstripe-photoswipe-elemental:client/dist/css/photoswipe.css');
     }
 }
