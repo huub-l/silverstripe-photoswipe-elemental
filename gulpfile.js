@@ -3,7 +3,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const cleanCSS = require('gulp-clean-css');
 const { parallel, watch, src, dest } = require('gulp');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 const sourcemaps = require('gulp-sourcemaps');
 const mode = require('gulp-mode')({
     modes: ["production", "development"],
@@ -28,14 +28,22 @@ function processcss() {
 function transpileJS() {
     return src('client/src/javascript/**/*.js')
         .pipe(mode.development(sourcemaps.init()))
-        .pipe(babel({
-            presets: [
-                '@babel/preset-env'
-            ]
-        }))
-        .pipe(mode.production(uglify()))
+        .pipe(
+            babel({
+                presets: [
+                    [
+                        '@babel/preset-env',
+                        {
+                            targets: { esmodules: true },
+                            modules: false, // Keep import/export
+                        },
+                    ],
+                ],
+            })
+        )
+        .pipe(mode.production(terser())) // Safe for modern JS
         .pipe(mode.development(sourcemaps.write('../../dist/javascript/maps')))
-        .pipe(dest('client/dist/javascript'))
+        .pipe(dest('client/dist/javascript'));
 }
 
 function copyjsfiles() {
